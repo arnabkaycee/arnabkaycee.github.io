@@ -11,5 +11,7 @@ I am enthusiast about DLT and Distributed systems. I am keen to make Distributed
 
 **contact information**
 
-- 📧 {{ site.author.email }}
-- 🧑🏻‍💻 github.com/{{ site.author.github }}
+- Say Hi 👋 {{ site.author.email }}
+- My code 🧑🏻‍💻 at <a href="https://github.com/arnabkaycee" target="_blank">GitHub</a>  
+- Q&A 🤔 at <a href="https://stackoverflow.com/users/575556/arnabkaycee" target="_blank">StackOverflow</a>
+- Thoughts 🐦 at <a href="https://twitter.com/arnabkaycee" target="_blank">Twitter</a>
