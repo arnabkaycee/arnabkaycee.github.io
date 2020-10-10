@@ -38,4 +38,18 @@ I will try to explore the following areas, and in each, I try to cover three fun
 
 # Overall Architecture of Hyperledger Fabric vs Ethereum
 
-In this section I attempt to break down the fundamental cogs that drive the Fabric Blockchain Operating system from the Ethereum Blockchain Operating system. Although mouthful it may sound, both of these platforms are irrefutable distributed in nature.
+In this section I attempt to break down the fundamental cogs that drive the Fabric Blockchain Operating system from the Ethereum Blockchain Operating system. Although mouthful it may sound, both of these platforms are irrefutably distributed in nature. Hence all principles of distributed systems apply here. If you are not too familiar with distributed system principles I cannot recommend [this](http://book.mixu.net/distsys/single-page.html) article enough for a quick reckoner on Distributed systems. 
+
+But let me take a quick plunge into the **fundamentals of distributed systems**:
+
+- Distributed systems are composed of nodes or computers that are capable of computing (calculating), storing, and transmitting data.
+- These computers are *Unreliable* and so are the *communication channel(s)* that connect them. Any or both can crash or malfunction at any point of time. 
+- Distributed systems do not have a global clock. Ever tried setting two electronic clocks precisely to the second (do it with two computers to the millisecond).
+- Distributed systems are hard. One simply does not design a distributed system if there was a monolith computer with infinite compute and storage.
+- All systems are eventually designed to cater to Functional and Non-Functional needs. Non-Functional needs a.k.a. Quality Needs. Basic quality needs of any distributed system include Scalability, Performance, Availability, and Fault Tolerance.
+- For reliability and availability one needs to replicate data. Where there is replication involved in distributed systems, the famous CAP theorem applies. It says that you cannot have all three properties in a distributed system (which replicates data) at the same time, i.e. Consistency, Availability and Partition Tolerance. Try achieving any two and you have to trade-off the other.  
+
+Although all of these are important but perhaps I feel the most important of these is
+
+> Computers are *Unreliable* and so are the *communication channel(s)* that connect them. Any or both can crash or malfunction at any point of time
+
