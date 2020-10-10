@@ -1,7 +1,7 @@
 (() => {
   // Theme switch
   const body = document.body;
-  const lamp = document.getElementById("mode");
+  const lamp = document.getElementById("thememode");
   const data = body.getAttribute("data-theme");
 
   const initTheme = (state) => {

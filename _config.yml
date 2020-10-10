@@ -20,6 +20,7 @@ author:
   email: arnabkaycee[at]gmail.com # email adress
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
+logo: /assets/img/logo.png
 # URL settings
 url: "https://arnabkaycee.github.io" #
 baseurl:
