@@ -37,41 +37,41 @@ This might not seem a problem at first, but underlying is a bug waiting to surpr
 Consider this code :
 
 ```go
-    package main
-	import (
-		//other imports
-		"github.com/hyperledger/fabric/core/chaincode/shim"
-	  	 pb "github.com/hyperledger/fabric/protos/peer"
-	)
+package main
+import (
+    //other imports
+    "github.com/hyperledger/fabric/core/chaincode/shim"
+        pb "github.com/hyperledger/fabric/protos/peer"
+)
 
-	//DON'T DO THIS	
-    totalNumberOfMarbles := 0
+//DON'T DO THIS	
+totalNumberOfMarbles := 0
+
+func (t *SimpleChaincode) initMarble(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+    var err error
     
-    func (t *SimpleChaincode) initMarble(stub shim.ChaincodeStubInterface, args []string) pb.Response {
-	    var err error
-	    
-		marbleId := fmt.Sprintf("MARBLE_%06d",totalNumberOfMarbles)
-		marbleName := args[0]
-		color := strings.ToLower(args[1])
-		owner := strings.ToLower(args[3])
-		size, err := strconv.Atoi(args[2])
-		
-		//other code to initialize
-		objectType := "marble"
-		marble := &marble{objectType, marbleId, marbleName, color, size, owner}
-		
-		//--------------CODE SMELL----------------
-		//BIG source of Non-determinism as well as performance hit.
-		totalNumberOfMarbles = totalNumberOfMarbles + 1 
-		//--------------CODE SMELL----------------
-		
+    marbleId := fmt.Sprintf("MARBLE_%06d",totalNumberOfMarbles)
+    marbleName := args[0]
+    color := strings.ToLower(args[1])
+    owner := strings.ToLower(args[3])
+    size, err := strconv.Atoi(args[2])
+    
+    //other code to initialize
+    objectType := "marble"
+    marble := &marble{objectType, marbleId, marbleName, color, size, owner}
+    
+    //--------------CODE SMELL----------------
+    //BIG source of Non-determinism as well as performance hit.
+    totalNumberOfMarbles = totalNumberOfMarbles + 1 
+    //--------------CODE SMELL----------------
+    
 
-		//regular stuff...		
-		err = stub.PutState(marbleId, marbleJSONasBytes)
-		if err != nil {
-			return shim.Error(err.Error())
-		}
+    //regular stuff...		
+    err = stub.PutState(marbleId, marbleJSONasBytes)
+    if err != nil {
+        return shim.Error(err.Error())
     }
+}
 ```
 
 
