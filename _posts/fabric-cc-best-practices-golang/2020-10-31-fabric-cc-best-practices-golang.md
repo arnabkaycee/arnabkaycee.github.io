@@ -36,6 +36,7 @@ This might not seem a problem at first, but underlying is a bug waiting to surpr
 
 Consider this code :
 
+```go
     package main
 	import (
 		//other imports
@@ -71,6 +72,7 @@ Consider this code :
 			return shim.Error(err.Error())
 		}
     }
+```
 
 
 Well. Why do I hate this?
